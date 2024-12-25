@@ -1,0 +1,80 @@
+// Register User
+POST
+http://localhost:8080/users/register
+{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "password123",
+    "phone": "1234567890"
+}
+
+// Login
+POST
+http://localhost:8080/users/login
+{
+    "username": "testuser",
+    "password": "password123"
+}
+
+
+
+
+// View All Hotels
+GET
+ http://localhost:8080/hotels/all
+
+// Search Hotel by Name
+GET
+http://localhost:8080/hotels/search/name?name=Four Seasons Nile Plaza
+
+// Search Hotels by Location
+GET
+http://localhost:8080/hotels/search/location?location=Cairo
+
+// Book Hotel Room
+http://localhost:8080/hotels/Four Seasons Nile Plaza/book?roomType=SINGLE
+{
+    "username": "testuser",
+    "checkIn": "2024-01-01",
+    "checkOut": "2024-01-05"
+}
+
+// View User's Hotel Bookings
+GET
+http://localhost:8080/hotels/user/testuser/bookings
+
+
+
+
+// View All Events
+GET
+http://localhost:8080/events/all
+
+// Search Event by Name
+GET
+http://localhost:8080/events/search/name
+{
+   "searchTerm":"Luxor Cultural Event"
+}
+
+
+
+// Search Events by Location
+GET
+ http://localhost:8080/events/search/location
+{
+   "searchTerm":"Cairo"
+}
+
+// Book Event Ticket
+POST
+http://localhost:8080/events/Luxor Cultural Event/book
+{
+    "username": "john.doe",
+    "numberOfTickets": 2
+}
+// View User's Event Tickets
+GET
+http://localhost:8080/events/user/john.doe/tickets
+
+
